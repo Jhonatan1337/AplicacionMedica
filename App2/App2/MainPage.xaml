@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             mc:Ignorable="d"
+             x:Class="App2.MainPage">
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <cv:CarouselViewControl Grid.Row="0" Grid.ColumnSpan="4" x:Name="cvWalkthrough" ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
+                                CurrentPageIndicatorTintColor="#FF0088" Orientation="Horizontal" InterPageSpacing="0"  
+                                ItemsSource="{Binding WalkthroughItems}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                                AnimateTransition="True">
+            <cv:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="LightBlue"/>
+                            <ImageButton Source="banio1.png" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" WidthRequest="100" HeightRequest="100" FlexLayout.AlignSelf="Center" FlexLayout.Grow="1"  Aspect="AspectFit" x:Name="txtBebida"/>
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="LightBlue"/>
+                            <ImageButton Source="banio2.png" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" WidthRequest="80" HeightRequest="80" FlexLayout.AlignSelf="Center" FlexLayout.Grow="1"  Aspect="AspectFit" x:Name="txtComida"/>
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="LightBlue"/>
+                            <ImageButton Source="enfermo.png" Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" WidthRequest="80" HeightRequest="80" FlexLayout.AlignSelf="Center" FlexLayout.Grow="1"  Aspect="AspectFit" x:Name="txtBanio"/>
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="LightBlue"/>
+                        <ImageButton Source="revision.png" Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" WidthRequest="80" HeightRequest="80" FlexLayout.AlignSelf="Center" FlexLayout.Grow="1"  Aspect="AspectFit" x:Name="txtRevision"/>
+                    </Grid>
+                </DataTemplate>
+            </cv:CarouselViewControl.ItemTemplate>
+        </cv:CarouselViewControl>
+        <BoxView Grid.Row="1"  Grid.ColumnSpan="4" Color="Salmon"/>
+        <Entry Grid.Row="1" Grid.ColumnSpan="3"  x:Name="txtTexto" Placeholder="Ingresa la frase"/>
+        <Button Grid.Row="1"  Grid.Column="3"  HorizontalOptions="Center" Text="Hablar" Clicked="Button_Clicked"/>
+    </Grid>
+
+        
+
+        
+    
+
+</ContentPage>
+    
+
